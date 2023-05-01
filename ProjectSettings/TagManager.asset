@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - FloorNWall
+  - Floor
+  - Walls
+  - TransitionRight
+  - SpawnPoint
+  - Hero
+  - ItemCollider
+  - Menu
+  - Traps
+  - TrapCollider
+  - golgrathern
+  - ethern
+  - golgrathen
+  - ortrax
+  - fireworm
+  - mushroom
+  - skeleton
+  - goblin
+  - bigswordknight
+  - swordknight
+  - fastknight
+  - swordknight
+  - bat
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Triggers
+  - Water
+  - UI
+  - Particles|Fog
+  - Traps
+  - hero
+  - enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
