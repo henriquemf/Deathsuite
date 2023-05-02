@@ -27,6 +27,7 @@ TagManager:
   - fastknight
   - swordknight
   - bat
+  - WholeItemSystem
   layers:
   - Default
   - TransparentFX

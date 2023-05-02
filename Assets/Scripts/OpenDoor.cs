@@ -36,7 +36,7 @@ public class OpenDoor : MonoBehaviour
 
     private void CheckNextLevel()
     {
-        Debug.Log(EnemySpawner.mobCnt);
+        // Debug.Log(EnemySpawner.mobCnt);
         if (EnemySpawner.mobCnt <= 0)
         {
             Debug.Log("Open Door");

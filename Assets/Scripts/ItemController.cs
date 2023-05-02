@@ -215,6 +215,5 @@ public class ItemController : MonoBehaviour
     private void ActivateItem()
     {
         animator.Play("Bouncing");
-
     }
 }

@@ -76,7 +76,7 @@ public class Tab : MonoBehaviour
             }
         }
 
-        attributesText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = PlayerCharacter.GetCurrentLifePoints() + " HP";
+        attributesText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = PlayerCharacter.GetCurrentLifePoints() + "/" + PlayerCharacter.GetCurrentMaxLifePoints() + " HP";
         attributesText.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = PlayerCharacter.GetCurrentAttackPoints() + " ATK";
         attributesText.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = PlayerCharacter.GetCurrentProficiencyPoints() + "%";
         attributesText.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = (2 + PlayerCharacter.GetCurrentExcelencePoints()/10f).ToString("0.0") + "x";

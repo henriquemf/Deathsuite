@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour {
 	private AudioSource atk1;
 	private AudioSource atk2;
 	private AudioSource atk3;
-	private float attackCooldown = 1f; // Tempo de espera entre os ataques
+	private float attackCooldown = 0.5f; // Tempo de espera entre os ataques
     private float lastAttackTime = 0f; // Tempo do último ataque
 
 	void Start()
@@ -91,6 +91,7 @@ public class PlayerMovement : MonoBehaviour {
 				Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 				foreach (Collider2D enemy in hitEnemies)
 				{
+					// get genemy GameObject
 					hitCount++;
 					if (hitCount == 1) 
 					{
@@ -113,21 +114,38 @@ public class PlayerMovement : MonoBehaviour {
 					}
 					enemy.GetComponent<Animator>().SetTrigger("tookHit");
 					List<GameObject> enemiesToRemove = new List<GameObject>();
-					foreach (GameObject activeEnemy in EnemySpawner.activeEnemyPrefabs)
+					if (enemy.gameObject.name == "Enemy")
 					{
-						if (activeEnemy.name == enemy.name)
+						MobGFX mobGFX = enemy.GetComponent<MobGFX>();
+						Debug.Log("Enemy hp: " + mobGFX.mob.hp);
+						if (mobGFX != null)
 						{
-							MobGFX mobGFX = activeEnemy.GetComponent<MobGFX>();
-							Debug.Log(mobGFX != null);
-							if (mobGFX != null)
+							mobGFX.mob.hp -= PlayerCharacter.CalculateDamage();
+							Debug.Log("Enemy hp: " + mobGFX.mob.hp);
+							if (mobGFX.mob.hp <= 0)
 							{
-								mobGFX.mob.hp -= PlayerCharacter.CalculateDamage();
-								Debug.Log("Enemy hp: " + mobGFX.mob.hp);
-								if (mobGFX.mob.hp <= 0)
+								enemiesToRemove.Add(enemy.gameObject);
+								mobGFX.kill();
+							}
+						}
+					}
+					else
+					{
+						foreach (GameObject activeEnemy in EnemySpawner.activeEnemyPrefabs)
+						{
+							if (activeEnemy.name == enemy.name)
+							{
+								MobGFX mobGFX = activeEnemy.GetComponent<MobGFX>();
+								if (mobGFX != null)
 								{
-									enemiesToRemove.Add(activeEnemy);
-									EnemySpawner.mobCnt--;
-									mobGFX.kill();
+									mobGFX.mob.hp -= PlayerCharacter.CalculateDamage();
+									Debug.Log("Enemy hp: " + mobGFX.mob.hp);
+									if (mobGFX.mob.hp <= 0)
+									{
+										enemiesToRemove.Add(activeEnemy);
+										EnemySpawner.mobCnt--;
+										mobGFX.kill();
+									}
 								}
 							}
 						}

@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class DisableItem : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private GameObject[] wholeItemSystems;
+    private GameObject wholeItemSystem;
+    private GameObject itemParent;
+
     void Start()
     {
-    // Encontre o objeto "MeuObjeto" dentro do prefab "MeuPrefab"
-    GameObject itemParent = GameObject.Find("WholeItemSystem");
-    itemParent.transform.Find("ItemParent").gameObject.SetActive(false);
+        wholeItemSystems = GameObject.FindGameObjectsWithTag("WholeItemSystem");
+        foreach (GameObject wholeItemSystem in wholeItemSystems)
+        {
+            itemParent = wholeItemSystem.transform.Find("ItemParent").gameObject;   
+            if (itemParent != null)
+            {   
+                itemParent.SetActive(false);
+            }
+        }
     }
 }

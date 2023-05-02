@@ -26,7 +26,7 @@ public class TransitionScreen : MonoBehaviour
         // Inicia a animação de Transition_Start
         crossfadeAnimator.Play("Transition_Start");
 
-        if (SceneIDs.previousSceneID == 20) {
+        if (SceneIDs.previousSceneID == 20 || SceneIDs.previousSceneID == 21) {
             ResetLists();
         }
     }

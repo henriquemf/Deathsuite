@@ -377,6 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiPath: {fileID: 6070631601834664817}
+  prefabToSpawn: {fileID: 0}
   attackPoint: {fileID: 8864170636054048256}
   attackRange: 1.05
   enemyLayers:
@@ -665,7 +666,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9004549060030775922}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.2900002, y: -1, z: 0.21817803}
+  m_LocalPosition: {x: -2.31, y: -0.46, z: 0.21817803}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
