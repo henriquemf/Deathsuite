@@ -215,7 +215,7 @@ MonoBehaviour:
   radius: 1.57
   height: 1.99
   canMove: 1
-  maxSpeed: 1
+  maxSpeed: 1.8
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -267,7 +267,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 7.743712
+  m_Mass: 3.3688474
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -289,9 +289,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.02545023}
   serializedVersion: 2
-  m_Radius: 1.57
+  m_Radius: 1.0355372
 --- !u!95 &3097616732857834251
 Animator:
   serializedVersion: 5
@@ -383,6 +383,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   animator: {fileID: 3097616732857834251}
+  prefabToSpawn: {fileID: 0}
   rb: {fileID: 6070631601834664818}
   mobObj: {fileID: 6070631601834664820}
 --- !u!1 &6883502699369051739

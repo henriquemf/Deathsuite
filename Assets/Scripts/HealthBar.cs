@@ -16,7 +16,6 @@ public class HealthBar : MonoBehaviour
     void Start()
     {
         slider = GetComponent<Slider>();
-        slider.maxValue = PlayerCharacter.GetCurrentMaxLifePoints();
 
         if (SceneManager.GetActiveScene().name == "WFFirst" || SceneManager.GetActiveScene().name == "HC1" || SceneManager.GetActiveScene().name == "OC1")
         {
@@ -24,6 +23,9 @@ public class HealthBar : MonoBehaviour
             slider.maxValue = PlayerCharacter.GetCurrentMaxLifePoints();
             slider.value = PlayerCharacter.GetCurrentMaxLifePoints();
         }
+
+        slider.maxValue = PlayerCharacter.GetCurrentMaxLifePoints();
+        slider.value = PlayerCharacter.GetCurrentLifePoints();
     }
 
     public static void SetMaxHealth(int health)

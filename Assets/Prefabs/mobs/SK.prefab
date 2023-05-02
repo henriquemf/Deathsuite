@@ -270,7 +270,7 @@ Rigidbody2D:
   m_Mass: 15.95
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 71.77
+  m_GravityScale: 72
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -289,9 +289,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.2868216, y: -0.5616909}
   serializedVersion: 2
-  m_Radius: 1.57
+  m_Radius: 1.4863437
 --- !u!95 &3097616732857834251
 Animator:
   serializedVersion: 5
@@ -377,6 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiPath: {fileID: 6070631601834664817}
+  prefabToSpawn: {fileID: 0}
   attackPoint: {fileID: 8864170636054048256}
   attackRange: 1.05
   enemyLayers:

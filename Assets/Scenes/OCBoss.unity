@@ -23958,6 +23958,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 278618831, guid: c32a96b8c749d484b863646a6c94eaa1, type: 3}
+    - target: {fileID: 1600388771300595771, guid: 0f3654a324a2dde41a787718d0807d79, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600388771300595771, guid: 0f3654a324a2dde41a787718d0807d79, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600388771300595771, guid: 0f3654a324a2dde41a787718d0807d79, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3097616732857834251, guid: 0f3654a324a2dde41a787718d0807d79, type: 3}
       propertyPath: m_Controller
       value: 
@@ -30060,6 +30072,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6d04a453d85f2842b5fcf35a91a187a, type: 3}
+--- !u!1 &1619203705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1619203707}
+  - component: {fileID: 1619203706}
+  m_Layer: 0
+  m_Name: OrtraxLoaderWS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1619203706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619203705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38e37ddfe0a7db4d95bffbc3145caff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1619203707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619203705}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6014733, y: -2.9731145, z: -0.0098317005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1647893844
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -95,42 +95,42 @@ public class PlayerMovement : MonoBehaviour {
 					hitCount++;
 					if (hitCount == 1) 
 					{
-						Debug.Log("Hit 1");
+						//Debug.Log("Hit 1");
 						StartCoroutine(cameraShake.Shake(.3f, .3f));
 						hit1.Play();
 					}
 					else if (hitCount == 2)
 					{
-						Debug.Log("Hit 2");
+						//Debug.Log("Hit 2");
 						StartCoroutine(cameraShake.Shake(.3f, .3f));
 						hit2.Play();
 					}
 					else if (hitCount == 3)
 					{
-						Debug.Log("Hit 3");
+						//Debug.Log("Hit 3");
 						StartCoroutine(cameraShake.Shake(.3f, .3f));
 						hit3.Play();
 						hitCount = 0;
 					}
 					enemy.GetComponent<Animator>().SetTrigger("tookHit");
-					List<GameObject> enemiesToRemove = new List<GameObject>();
 					if (enemy.gameObject.name == "Enemy")
 					{
 						MobGFX mobGFX = enemy.GetComponent<MobGFX>();
-						Debug.Log("Enemy hp: " + mobGFX.mob.hp);
+						//Debug.Log("Enemy hp: " + mobGFX.mob.hp);
 						if (mobGFX != null)
 						{
 							mobGFX.mob.hp -= PlayerCharacter.CalculateDamage();
-							Debug.Log("Enemy hp: " + mobGFX.mob.hp);
+							//Debug.Log("Enemy hp: " + mobGFX.mob.hp);
 							if (mobGFX.mob.hp <= 0)
 							{
-								enemiesToRemove.Add(enemy.gameObject);
+								EnemySpawner.activeEnemyPrefabs.Remove(enemy.gameObject);
 								mobGFX.kill();
 							}
 						}
 					}
 					else
 					{
+						List<GameObject> enemiesToRemove = new List<GameObject>();
 						foreach (GameObject activeEnemy in EnemySpawner.activeEnemyPrefabs)
 						{
 							if (activeEnemy.name == enemy.name)
@@ -139,9 +139,10 @@ public class PlayerMovement : MonoBehaviour {
 								if (mobGFX != null)
 								{
 									mobGFX.mob.hp -= PlayerCharacter.CalculateDamage();
-									Debug.Log("Enemy hp: " + mobGFX.mob.hp);
+									//Debug.Log("Enemy hp: " + mobGFX.mob.hp);
 									if (mobGFX.mob.hp <= 0)
 									{
+										//Debug.Log("DIED");
 										enemiesToRemove.Add(activeEnemy);
 										EnemySpawner.mobCnt--;
 										mobGFX.kill();
@@ -149,10 +150,10 @@ public class PlayerMovement : MonoBehaviour {
 								}
 							}
 						}
-					}
-					foreach (GameObject enemyToRemove in enemiesToRemove)
-					{
-						EnemySpawner.activeEnemyPrefabs.Remove(enemyToRemove);
+						foreach (GameObject enemyToRemove in enemiesToRemove)
+						{
+							EnemySpawner.activeEnemyPrefabs.Remove(enemyToRemove);
+						}
 					}
 				}
 			}

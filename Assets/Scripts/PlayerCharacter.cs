@@ -94,9 +94,6 @@ public class PlayerCharacter : MonoBehaviour
         {
             currentLifePoints = 1;
         }
-        
-        HealthBar.SetMaxHealth(currentMaxLifePoints);
-        HealthBar.SetHealth(currentLifePoints);
     }
 
     public static void TakeHit(int value) {
@@ -187,7 +184,7 @@ public class PlayerCharacter : MonoBehaviour
             Debug.Log("Hiromasa Critical");
             criticalHit = GameObject.Find("HiromasaCritical").GetComponent<AudioSource>();
         }
-
+//Debug.Log
         if (Random.Range(0, 100) <= criticalChance)
         {
             criticalHit.Play();

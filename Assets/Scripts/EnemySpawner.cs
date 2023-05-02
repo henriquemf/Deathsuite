@@ -8,12 +8,13 @@ public class EnemySpawner : MonoBehaviour
     public float spawnRate = 12f;
     public GameObject[] enemyPrefabs;
     public bool canSpawn = true;
-    public static int mobCnt = 4;
+    public static int mobCnt;
     public List<Transform> spawnPoints = new List<Transform>();
     public static List<GameObject> activeEnemyPrefabs = new List<GameObject>();
 
     private Transform target;
     private string currentCharacter;
+    private float lastSpawnTime = 0f;
     Vector3 initialPosition;
     string activeSceneName;
     List<string> list1 = new List<string>() { "WFFirst", "WF1", "WF2", "WF3", "WF4" };
@@ -23,7 +24,6 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mobCnt = 4;
         activeSceneName = SceneManager.GetActiveScene().name;
         currentCharacter = PlayerCharacter.GetCurrentCharacter();
         target = GameObject.Find("Hiromasa").GetComponent<Transform>();
@@ -75,11 +75,18 @@ public class EnemySpawner : MonoBehaviour
                 mobPerSpawnPoint.Add(num / 2);
             }
         }
+        mobCnt = mobPerSpawnPoint.Count;
+        // debug the list
+        for (int i = 0; i < mobPerSpawnPoint.Count; i++)
+        {
+            Debug.Log("mobPerSpawnPoint[" + i + "] = " + mobPerSpawnPoint[i]);
+        }
         while (canSpawn)
         {
             yield return wait;
-            if (activeEnemyPrefabs.Count == 0)
+            if (activeEnemyPrefabs.Count == 0 && lastSpawnTime + spawnRate < Time.time)
             {
+                lastSpawnTime = Time.time;
                 for (int i = 0; i < mobPerSpawnPoint[index]; i++)
                 {
                     if (list1.Contains(activeSceneName))

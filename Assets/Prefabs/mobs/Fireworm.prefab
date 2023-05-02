@@ -215,7 +215,7 @@ MonoBehaviour:
   radius: 1.57
   height: 1.99
   canMove: 1
-  maxSpeed: 3.91
+  maxSpeed: 2.52
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -289,9 +289,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.08856058, y: 0.08856106}
   serializedVersion: 2
-  m_Radius: 1.57
+  m_Radius: 0.8497071
 --- !u!95 &3097616732857834251
 Animator:
   serializedVersion: 5
@@ -377,13 +377,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiPath: {fileID: 6070631601834664817}
-  prefabToSpawn: {fileID: 2056831015296148179, guid: 2a376679449da1a4d9ef2e4be225e316, type: 3}
   attackPoint: {fileID: 8864170636054048256}
   attackRange: 1.05
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256
   animator: {fileID: 3097616732857834251}
+  prefabToSpawn: {fileID: 2056831015296148179, guid: 2a376679449da1a4d9ef2e4be225e316, type: 3}
   rb: {fileID: 6070631601834664818}
   mobObj: {fileID: 6070631601834664820}
 --- !u!1 &6883502699369051739

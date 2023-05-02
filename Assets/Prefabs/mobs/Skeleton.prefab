@@ -215,7 +215,7 @@ MonoBehaviour:
   radius: 1.57
   height: 1.99
   canMove: 1
-  maxSpeed: 3.91
+  maxSpeed: 0.95
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -234,9 +234,9 @@ MonoBehaviour:
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 1.87
-  pickNextWaypointDist: 1.57
-  endReachedDistance: 1.02
+  slowdownDistance: 2.26
+  pickNextWaypointDist: 2.25
+  endReachedDistance: 2.22
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -377,13 +377,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiPath: {fileID: 6070631601834664817}
-  prefabToSpawn: {fileID: 0}
   attackPoint: {fileID: 8864170636054048256}
   attackRange: 1.05
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256
   animator: {fileID: 3097616732857834251}
+  prefabToSpawn: {fileID: 0}
   rb: {fileID: 6070631601834664818}
   mobObj: {fileID: 6070631601834664820}
 --- !u!1 &6883502699369051739
